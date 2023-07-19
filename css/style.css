@@ -60,6 +60,21 @@ a{
     background-size: cover;
     background-position: center;
 }
+.home::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+.home.show::before{
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /*Formulario*/
 .form-container{
@@ -68,16 +83,32 @@ a{
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.2);
     z-index: 101;
     background: #fff;
     padding: 25px;
     border-radius: 12px;
     box-shadow: rgba(0,0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
 }
+.home.show .form-container{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .signup-form{
     display: none;
 }
+.form-container.active .signup-form{
+    display: block;   
+}
+.form-container.active .login-form{
+    display: none;
+}
+
 .form-close{
     position: absolute;
     top: 10px;
@@ -130,6 +161,7 @@ a{
 .input-box i.pw-hide{
     right: 0;
     font-size: 18px;
+    cursor: pointer;
 }
 .option-field{
     margin-top: 14px;
