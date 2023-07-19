@@ -204,3 +204,91 @@ a{
     text-align: center;
     margin-top: 15px;
 }
+
+
+/*Contacto*/
+.contact{
+    height: 95vh;
+    width: 100%;
+    background-color: black;
+    
+}
+.contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+.contact-logo{
+    width: 50%;
+    margin-left: 18%;
+}
+.contact-logo p{
+    color: white;
+    margin-right: 20%;
+}
+.contact-info{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5% 20% 5% 0;
+}
+.contact-info div{
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+
+}
+.contact-info div a{
+    color: white;
+}
+.contact-info div:hover a,
+.contact-info div:hover i{
+    color: #c70202d2;
+    transition: all 0.3s ease-in-out;
+}
+.contact-info div i{
+    color: white;
+    font-size: 2rem;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+
+
+.contact-form-container{
+    width: 50%;    
+}
+.contact-form{
+    margin: auto;
+    border-radius: 12px;
+    background-color: white;
+    margin-right: 42%;
+    padding: 4% 8% 7% 8%;
+}
+.contact-form-submit{
+    padding: 10px 0;
+    margin: 10% 16%;
+    
+    cursor: pointer;
+    width: 70%;
+    
+    color: white;
+    background: #c70202d2;
+    
+    border: 0;
+    border-radius: 10px;
+    
+}
+/* .contact-form input{
+    display: flex;
+    flex-direction: column;
+    
+    height: 2.2rem;
+    width: 50%;
+
+    margin: 5%;
+
+} */
