@@ -9,9 +9,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 
+const userRouter = require("./routes/user")
+const mailRouter = require("./routes/mails")
 
-
-
+app.use("/api/users", userRouter)
+app.use("/api/mails", mailRouter)
 
 
 

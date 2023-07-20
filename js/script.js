@@ -40,3 +40,30 @@ loginBtn.addEventListener("click", (e) => {
 
 
 
+//-------------------------------------------------------------------------
+//Scripts pagina de perfil:
+
+//Cambio de foto de perfil
+document.addEventListener('DOMContentLoaded', () => {
+    const pictureInput = document.getElementById('picture-input');
+    const imageElement = document.getElementById('profile-picture');
+  
+    pictureInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+  
+      if (file) {
+        
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            // Actualizar el atributo src de la imagen para mostrar la imagen seleccionada
+            imageElement.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          alert('Por favor, selecciona un archivo de imagen válido.');
+        }
+      }
+    });
+});
+  
