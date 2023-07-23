@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:inherit;
+    font-family: "Poppins",sans-serif;
+}
+body{
+
+    background: #4d0202;
+    padding-bottom: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100 vh;
+    margin: 0;
+    color: #d2d6e0;
+    font-size: 100%;
+    line-height: 1.4em;
+}
+
+.rankin-landing-page{
+    position: relative;
+    background-color: #443e3e;
+}
+body.ranking h1{
+    margin: 0, 0, 20px, 0;
+    padding-top: 110px;
+    text-align: center;
+}
+.ranking-categorias-peso{
+    overflow: hidden;
+}
+.r-contenedor-contenido-categorias-peso{
+    position: relative;
+}
+body.ranking .r-contenido-categorias-peso{
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.r-tablas-peso-contenedor{
+    max-width: 1220px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px, 0, 0, 0;
+}
+
+body.ranking .tabla-grupo-contenido{
+    display: inline-block;
+    width: 24%;
+    vertical-align: top;
+    background-color: #6e6a674d;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+body.ranking .tabla-grupo-contenido table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body.ranking .ranking-campeon-atleta{
+    position: relative;
+    margin: 20px 0;
+    border-bottom: 1px solid grey;
+    height: 220px;
+    overflow: hidden;
+}
+body.ranking .ranking-campeon-atleta .info{
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+}
+body.ranking .ranking-campeon-atleta h4{
+    letter-spacing: 2px;
+    color: #d20a0a;
+    font: 700 14px/2 Arial;
+    font-stretch: condensed;
+}
+body.ranking .ranking-campeon-atleta h5{
+    padding-top: 10px;
+    max-width: 50%;
+    font: 700 24px/1.08 Arial;
+    font-stretch: condensed;
+}
+body.ranking .ranking-campeon-atleta h6{
+    padding-top: 10px;
+    letter-spacing: 1.2px;
+    color: #abadb1;
+    font: 12px/1.17 Arial;
+}
+body.ranking .tabla-campo-rank{
+    text-align: left;
+    letter-spacing: 2px;
+    color: #191919;
+    font: bold 14px/1.14 Arial;
+    font-stretch: condensed;
+}
+body.ranking .tabla-campo-titulo,
+body.ranking .tabla-campo-rank
+{
+        padding:5px
+}
+body.ranking .tabla-campo-rank-cambio
+{
+    color: #191919;
+    font: bold 12px/1.1 Arial;
+    font-style: italic;
+}
+
+
+/* HEADER */
+a{
+    text-decoration: none;
+}
+.header{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+}
+.nav{
+    max-width: 1100px;
+    width: 100;
+    margin: 0 auto;
+}
+.nav,
+.nav-item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo,
+.nav-link,
+.button{
+    color: #fff;
+}
+.nav-logo{
+    font-size: 25px;
+}
+.nav-item{
+    column-gap: 25px;
+}
+.nav-link:hover{
+    color: #d9d9d9;
+}
+.button{
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.button:active{
+    transform: scale(0.98);
+}
+/* fin header */
