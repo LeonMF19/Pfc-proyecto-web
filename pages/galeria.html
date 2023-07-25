@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+</head>
+<body>
+    <main>
+         <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="nav-logo">PFC</a>
+                <ul class="nav-items">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                        <a href="ranking.html" class="nav-link">Ranking</a>
+                        <a href="#" class="nav-link">Galeria</a>
+                        <a href="contact.html" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <button class="button" id="form-open">Iniciar sesion</button>
+            </nav>
+        </header>
+        <section class="galeria-seccion-principal">
+            <h1 class="galeria-titulo">GALERIA</h1>
+            <span class="linea"></span>
+            <div class="galeria-contenedor-imagenes">
+                <a href="#img1">
+                    <img src="../img/pexels-cottonbro-studio-4753988.jpg" alt="">
+                </a>
+                <a href="#img2">
+                    <img src="../img/pexels-cottonbro-studio-4761668.jpg" alt="">
+                </a>
+                <a href="#img3">
+                    <img src="../img/pexels-cottonbro-studio-4761779.jpg" alt="">
+                </a>
+                <a href="#img4">
+                    <img src="../img/pexels-ivan-samkov-4162449.jpg" alt="">
+                </a>
+                <a href="#img5">
+                    <img src="../img/pexels-julia-larson-6456153.jpg" alt=""></a>
+                <a href="#img6">
+                    <img src="../img/pexels-leon-ardho-1552242.jpg" alt="">
+                </a>
+            </div>
+        </section>
+        
+        <article class="light-box" id="img1">
+            <a href="#img6" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="../img/pexels-cottonbro-studio-4753988.jpg" alt="">
+            <a href="#img2" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+        <article class="light-box" id="img2">
+            <a href="#img1" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="../img/pexels-cottonbro-studio-4761668.jpg" alt="">
+            <a href="#img3" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+        <article class="light-box" id="img3">
+            <a href="#img2" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="../img/pexels-cottonbro-studio-4761779.jpg" alt="">
+            <a href="#img4" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+        <article class="light-box" id="img4">
+            <a href="#img3" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="../img/pexels-ivan-samkov-4162449.jpg" alt="">
+            <a href="#img5" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+        <article class="light-box" id="img5">
+            <a href="#img4" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="img/pexels-julia-larson-6456153.jpg" alt="">
+            <a href="#img6" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+        <article class="light-box" id="img6">
+            <a href="#img5" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="../img/pexels-leon-ardho-1552242.jpg" alt="">
+            <a href="#img1" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="close">X</a>
+        </article>
+    </main>
+    <script src="https://kit.fontawesome.com/2a413b4c00.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

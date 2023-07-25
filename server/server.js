@@ -27,11 +27,11 @@ const sessionOpts = {
     secret: "shhh",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: DBconfig.URI,
-        dbName: "test"
+    // store: MongoStore.create({
+    //     mongoUrl: DBconfig.URI,
+    //     dbName: "test"
 
-    })
+    // })
 }
 
 

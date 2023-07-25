@@ -4,6 +4,9 @@ const router = Router()
 
 const { login, logout, createFighterProfile } = require("../controller/userController")
 
+router.get("/", () => {
+    console.log("dsadasdas")
+})
 
 router.post("/login", login)
 

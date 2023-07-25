@@ -37,8 +37,6 @@ loginBtn.addEventListener("click", (e) => {
     formContainer.classList.remove("active");
 });
 
-
-
 //-------------------------------------------------------------------------
 //Scripts pagina de contacto:
 const submitButton = document.querySelector("#form-submit")

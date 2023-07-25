@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible"content="IE-edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PFC Ranking</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <!--Iconos-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -18,7 +18,7 @@
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Inicio</a>
                     <a href="#" class="nav-link">Ranking</a>
-                    <a href="galery.html" class="nav-link">Galeria</a>
+                    <a href="galeria.html" class="nav-link">Galeria</a>
                     <a href="contact.html" class="nav-link">Contacto</a>
                 </li>
             </ul>
@@ -32,7 +32,7 @@
             <img class="logo" src="../img/logo pfc.png" alt="Logo PFC">
         </div>
         <div class="profile-form-container">
-            <form id="profile-form" action="../server/routes/user.js" method="post">
+            <form id="profile-form" action="http://localhost:8080/api/users/fighterProfile" method="post">
                 <div class="picture-edit-container">
                     <img src="#" alt="Foto de Perfil" id="profile-picture">
                     <input type="file" accept="image/*" onChange="handleFileChange" id="picture-input" style="display: none;">
@@ -79,7 +79,7 @@
                         <input type="checkbox" name="terms" required>
                     </label>
                 </div>
-                <button class="contact-form-submit">Guardar</button>
+                <button class="profile-form-submit">Guardar</button>
             </form>
         </div>
     </section>
