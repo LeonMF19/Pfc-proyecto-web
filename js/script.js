@@ -1,3 +1,8 @@
+//IMPORTS
+// const { default: axios } = require("axios");
+
+
+
 const formOpenBtn = document.querySelector("#form-open"),
 home = document.querySelector(".home"),
 formContainer = document.querySelector(".form-container"),
@@ -34,7 +39,48 @@ loginBtn.addEventListener("click", (e) => {
 
 //-------------------------------------------------------------------------
 //Scripts pagina de contacto:
+const submitButton = document.querySelector("#form-submit")
+
+submitButton.addEventListener("click", () =>{
+  
+
+})
 
 
 
+//-------------------------------------------------------------------------
+//Scripts pagina de perfil:
 
+document.addEventListener('DOMContentLoaded', async () => {
+  //Cambio de foto de perfil
+    const pictureInput = document.getElementById('picture-input');
+    const imageElement = document.getElementById('profile-picture');
+
+    pictureInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+
+      if (file) {
+        
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            // Actualizar el atributo src de la imagen para mostrar la imagen seleccionada
+            imageElement.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          alert('Por favor, selecciona un archivo de imagen válido.');
+        }
+      }
+    });
+
+  //Configuración inputs(no permitir números negativos)
+    const numberInputs = document.getElementsByClassName("number-input")
+
+    numberInputs.addEventListener("blur", () => {
+      if (numberInputs.value < 0) {
+        numberInputs.value = 0;
+      }
+    });
+});
+  
