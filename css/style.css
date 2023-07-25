@@ -230,7 +230,7 @@ a{
     border: 0;
     border-radius: 12px;
 }
-.profile-form{
+#profile-form{
     width: 80%;
     margin: 4% 8%;
 }
@@ -263,7 +263,6 @@ a{
     text-decoration: underline 2px;
     color: #c70202d2;
 }
-
 
 
 
