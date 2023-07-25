@@ -32,8 +32,6 @@ loginBtn.addEventListener("click", (e) => {
     formContainer.classList.remove("active");
 });
 
-
-
 //-------------------------------------------------------------------------
 //Scripts pagina de contacto:
 
