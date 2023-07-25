@@ -52,8 +52,8 @@ a{
     transform: scale(0.98);
 }
 /*Inicio*/
-.home, 
-.ranking-home{
+.home
+{
     position: relative;
     height: 100vh;
     width: 100%;

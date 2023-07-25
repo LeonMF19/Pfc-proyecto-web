@@ -2,12 +2,14 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing:inherit;
+    box-sizing:border-box;
     font-family: "Poppins",sans-serif;
 }
 body{
 
-    background: #4d0202;
+    background-image: url(../img/istockphoto-1177188061-1024x1024.png.jpg);
+    background-size: cover;
+    background-position: center;
     padding-bottom: 500px;
     display: flex;
     flex-direction: column;
@@ -21,7 +23,7 @@ body{
 
 .rankin-landing-page{
     position: relative;
-    background-color: #443e3e;
+    background-color: rgba(0, 0, 0,0.6);
 }
 body.ranking h1{
     margin: 0, 0, 20px, 0;
