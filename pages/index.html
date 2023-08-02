@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible"content="IE-edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PFC Inicio</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!--Iconos-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <!--Header-->
@@ -23,15 +26,176 @@
                 </li>
             </ul>
             <button class="button" id="form-open">Iniciar sesion</button>
+            <!--Aca va el usuario una vez hecho el login-->
+            <div id="userField">
+                <!--(Generado por scripts)-->
+            </div>
         </nav>
     </header>
     <!--Inicio-->
     <section class="home">
+        <!--Proximos eventos-->
+        <!-- <div class="events-container">
+            <div class="events-title-container">
+                <h2 class="events-title">Próximos eventos</h2>
+            </div>
+            <div class="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="../img/pexels-ivan-samkov-4162449.jpg" class="d-block w-100" alt="Proximo Evento">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="Proximo Evento">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="Proximo Evento">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div> -->
+            
+        <!--Seccion para anotarse a los eventos-->
+        <div class="signin-events-container">
+            <h2 class="events-title">Anotate</h2>
+            <div id="events-container" class="events-to-sign">
+                <!--Aca van los eventos para anotarse-->
+                <div class="event" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="event-host">
+                        <img src="" alt="Logo competencia">
+                        <p>Organizacion</p>
+                    </div>
+                    <p>Nombre evento</p>
+                    <p>Fecha 22/8</p>
+                    <p>Amateur | Semi-pro | Pro</p>
+                </div>
+                <div class="event" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="event-host">
+                        <img src="" alt="Logo competencia">
+                        <p>Organizacion</p>
+                    </div>
+                    <p>Nombre evento</p>
+                    <p>Fecha 22/8</p>
+                    <p>Amateur | Semi-pro | Pro</p>
+                </div>
+                <div class="event" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="event-host">
+                        <img src="" alt="Logo competencia">
+                        <p>Organizacion</p>
+                    </div>
+                    <p>Nombre evento</p>
+                    <p>Fecha 22/8</p>
+                    <p>Amateur | Semi-pro | Pro</p>
+                </div>
+            
+                <!--Funcionalidad solo para ADMINS (Crear eventos)-->
+                <div class="create-event">
+                    <h2 class="create-event-text">Crear evento</h3>
+                    <i class="uil uil-plus-circle" data-bs-toggle="modal" data-bs-target="#createEventModal"></i>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Nombre Org/Dojo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2>Devil fight night</h2>
+                <div>
+                    <p>Torneo de peleas Amateur y Semi-pro Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, laboriosam!</p>
+                    <h4>Direccion</h3>
+                        <p>Av. Rivadavia 8000 Floresta</p>
+                    <h4>Pesaje</h4>
+                    <p>14:00 Hs Murillo y Malabia</p>
+                </div>
+                <label for="fighter-data">Anotarme con mis <a href="http://" target="_blank" rel="noopener noreferrer">datos actuales</a> 
+                    <input type="checkbox" name="fighter-data">
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-button-cancel" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="modal-button-confirm">Confirmar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal crear evento (ADMIN)-->
+    <div class="modal fade" id="createEventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Creando Evento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="create-event-form" id="events-form" action="http://localhost:8080/api/events/createEvent" method="POST">
+                    
+                    <div class="input-box">
+                        <input type="text" name="eventOrg" placeholder="De que Dojo/Organizacion" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventName" placeholder="Nombre del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" name="eventDate" placeholder="Fecha del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventModality" placeholder="Modalidades de combate" required>
+                    </div>
+                    <!--Informacion adicional-->
+                    <div class="input-box">
+                        <input type="text" name="eventAdress" placeholder="Dirección del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventWeighing" placeholder="PESAJE (Dirección y hora)" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventDescription" placeholder="Descripción del evento (opcional)">
+                    </div>
+
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-button-cancel" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="modal-button-confirm" id="events-submit">Confirmar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
         <div class="form-container">
             <i class="uil uil-times form-close"></i>
             <!-- Formulario inicio de sesion -->
             <div class="form login-form">
-                <form action="#">
+                <form action="http://localhost:8080/api/users/login">
                     <h2>Iniciar sesion</h2>
                     <div class="input-box">
                         <input type="email" placeholder="Ingrese su email" required>
@@ -39,8 +203,8 @@
                     </div>
                     <div class="input-box">
                         <input type="password" placeholder="Contraseña" required>
-                           <i class="uil uil-lock password"></i>
-                           <i class="uil uil-eye-slash pw-hide"></i>
+                            <i class="uil uil-lock password"></i>
+                            <i class="uil uil-eye-slash pw-hide"></i>
                     </div>  
                     <div class="option-field">
                         <span class="checkbox">
@@ -50,16 +214,18 @@
                         <a href="#" class="forgot-pw">Olvidaste tu contraseña?</a>
                     </div>
                     <button class="button">Iniciar sesion</button>             
-               
+                
                     <div class="login-signup">
-                         ¿No tienes una cuenta?<a href="#" id="signup">Regisrarme</a>
+                            ¿No tienes una cuenta?<a href="#" id="signup">Regisrarme</a>
                     </div>    
                 </form>
             </div>
+        </div>
+    
 
             <!--Formulario de registro-->
             <div class="form signup-form">
-                <form action="#">
+                <form action="http://localhost:8080/api/users/register">
                     <h2>Registrarme</h2>
                     <div class="input-box">
                         <input type="email" placeholder="Ingrese su email" required>
@@ -84,9 +250,11 @@
                 </form>
             </div>
 
-        </div>
+        
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    
     <script src="../js/script.js"></script>
 </body>
 </html>

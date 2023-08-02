@@ -5,6 +5,8 @@ const http = require("http")
 const app = express()
 const PORT = 8080
 
+const cors = require("cors")
+
 const mongoose = require("mongoose")
 const DBconfig = require("./db/config")
 
@@ -35,7 +37,12 @@ const sessionOpts = {
 }
 
 
+
+
 //Middlewares globales
+app.use(cors({
+    origin: "http://127.0.0.1:5500",
+}))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -46,10 +53,11 @@ app.use(passport.session())
 //Configuración de rutas
 const userRouter = require("./routes/user")
 const mailRouter = require("./routes/mails")
+const eventRouter = require("./routes/events")
 
 app.use("/api/users", userRouter)
 app.use("/api/mails", mailRouter)
-
+app.use("/api/events", eventRouter)
 
 //Inicio del servidor
 const server = http.createServer(app)

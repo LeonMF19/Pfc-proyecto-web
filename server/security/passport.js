@@ -11,11 +11,12 @@ passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, p
     try {
         //Se verifican los datos en la base de datos
         const result = await Usercontroller.auth(email, password)
+        console.log("RESULT AUTH ", result)
         if(result.status === 200){
             //En caso de ser correcto se extrae el mail del usuario, con eso vamos a verificar las solicitudes posteriores
-            const userToSerialize = result.email
+            const userToSerialize = {email: result.user[0].email}
             return done(null, userToSerialize)
-        } else{
+        } else if(result.status !== 200 || !result.status){
             return donde(null, false, {message: "Usuario no encontrado"})
         }
         
@@ -43,8 +44,11 @@ passport.deserializeUser((email, done) =>{
 
 
 //Función para verificar si el usuario esta autenticado
-async function checkAuthenticated(){
+async function checkAuthenticated(req, res, next){
     try {
+        if(req.isAuthenticated()){
+            return next()
+        }
         
     } catch (error) {
         console.log("[CHECK AUTHENTICATED ERROR] ", error)
