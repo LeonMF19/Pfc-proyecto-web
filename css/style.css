@@ -119,7 +119,10 @@ a{
 .signin-events-container{
     background-color: #fff;
     
-    margin: 5% 14%;
+    margin: 0 14%;
+    
+    position: relative;
+    bottom: -30%;
     max-width: 100%;
 
     
@@ -159,6 +162,39 @@ a{
 .event-host p{
     padding-left: 1%;
 }
+
+/*------------------------------------------------------------------*/
+/*Crear eventos*/
+
+.create-event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    
+    color: #fff;
+    background-color: #707070;
+    
+}
+.create-event-text{
+    margin: 0;
+
+}
+.create-event i{
+    font-size: 3.5rem;
+    color: #c70202d2;
+    padding-left: 1%;
+    cursor: pointer;
+}
+.create-event-form{
+    width: 80%;
+    margin: 2% 5%;
+}
+.event-form-submit{
+    
+}
+
 
 /*------------------------------------------------------------------*/
 /*Modal eventos*/

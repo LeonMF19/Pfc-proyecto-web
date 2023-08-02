@@ -26,12 +26,16 @@
                 </li>
             </ul>
             <button class="button" id="form-open">Iniciar sesion</button>
+            <!--Aca va el usuario una vez hecho el login-->
+            <div id="userField">
+                <!--(Generado por scripts)-->
+            </div>
         </nav>
     </header>
     <!--Inicio-->
     <section class="home">
         <!--Proximos eventos-->
-        <div class="events-container">
+        <!-- <div class="events-container">
             <div class="events-title-container">
                 <h2 class="events-title">Próximos eventos</h2>
             </div>
@@ -63,12 +67,12 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
             
         <!--Seccion para anotarse a los eventos-->
         <div class="signin-events-container">
             <h2 class="events-title">Anotate</h2>
-            <div class="events-to-sign">
+            <div id="events-container" class="events-to-sign">
                 <!--Aca van los eventos para anotarse-->
                 <div class="event" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <div class="event-host">
@@ -96,6 +100,12 @@
                     <p>Nombre evento</p>
                     <p>Fecha 22/8</p>
                     <p>Amateur | Semi-pro | Pro</p>
+                </div>
+            
+                <!--Funcionalidad solo para ADMINS (Crear eventos)-->
+                <div class="create-event">
+                    <h2 class="create-event-text">Crear evento</h3>
+                    <i class="uil uil-plus-circle" data-bs-toggle="modal" data-bs-target="#createEventModal"></i>
                 </div>
             </div>
         </div>
@@ -132,7 +142,50 @@
 
 
 
+    <!-- Modal crear evento (ADMIN)-->
+    <div class="modal fade" id="createEventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Creando Evento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="create-event-form" id="events-form" action="http://localhost:8080/api/events/createEvent" method="POST">
+                    
+                    <div class="input-box">
+                        <input type="text" name="eventOrg" placeholder="De que Dojo/Organizacion" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventName" placeholder="Nombre del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" name="eventDate" placeholder="Fecha del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventModality" placeholder="Modalidades de combate" required>
+                    </div>
+                    <!--Informacion adicional-->
+                    <div class="input-box">
+                        <input type="text" name="eventAdress" placeholder="Dirección del evento" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventWeighing" placeholder="PESAJE (Dirección y hora)" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="eventDescription" placeholder="Descripción del evento (opcional)">
+                    </div>
 
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-button-cancel" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="modal-button-confirm" id="events-submit">Confirmar</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
 
 
@@ -142,7 +195,7 @@
             <i class="uil uil-times form-close"></i>
             <!-- Formulario inicio de sesion -->
             <div class="form login-form">
-                <form action="#">
+                <form action="http://localhost:8080/api/users/login">
                     <h2>Iniciar sesion</h2>
                     <div class="input-box">
                         <input type="email" placeholder="Ingrese su email" required>
@@ -172,7 +225,7 @@
 
             <!--Formulario de registro-->
             <div class="form signup-form">
-                <form action="#">
+                <form action="http://localhost:8080/api/users/register">
                     <h2>Registrarme</h2>
                     <div class="input-box">
                         <input type="email" placeholder="Ingrese su email" required>
@@ -200,7 +253,7 @@
         
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-   
+    
     
     <script src="../js/script.js"></script>
 </body>

@@ -1,5 +1,59 @@
-//IMPORTS
-// const { default: axios } = require("axios");
+//-------------------------------------------------------------------------
+//Scripts Inicio
+
+//Funcion para crear eventos dinamicos y cargarlos
+async function loadEvents() {
+  const response = await fetch("http://localhost:8080/api/events/get") 
+  const data = await response.json()
+ 
+  const eventsContainer = document.getElementById("events-container")
+
+  if(data.length === 0){
+    const eventEmpty = document.createElement("div")
+    eventEmpty.classList.add("event-empty")
+    eventEmpty.innerHTML = `<h2 class="empty">No hay eventos por el momento</h2>`
+    
+    eventsContainer.appendChild(eventEmpty)
+  }else{
+    data.forEach((evento) => {
+      const eventDiv = document.createElement("div")
+      eventDiv.classList.add("event")
+      eventDiv.setAttribute("data-bs-toggle", "modal")
+      eventDiv.setAttribute("data-bs-target", "#staticBackdrop")
+  
+      const eventHostDiv = document.createElement("div")
+      eventHostDiv.classList.add("event-host")
+  
+      const logoImg = document.createElement("img")
+      logoImg.src = evento.logoCompetition
+      logoImg.alt = "Logo competencia"
+  
+      const eventOrg = document.createElement("p")
+      eventOrg.textContent = evento.org
+  
+      eventHostDiv.appendChild(logoImg)
+      eventHostDiv.appendChild(eventOrg)
+  
+      const eventName = document.createElement("p")
+      eventName.textContent = evento.name
+  
+      const eventDate = document.createElement("p")
+      eventDate.textContent = `Fecha ${evento.date}`
+  
+      const eventModality = document.createElement("p")
+      eventModality.textContent = evento.modality
+  
+      eventDiv.appendChild(eventHostDiv)
+      eventDiv.appendChild(eventName)
+      eventDiv.appendChild(eventDate)
+      eventDiv.appendChild(eventModality)
+  
+      eventsContainer.appendChild(eventDiv) // Agregar el div del evento al contenedor
+    });
+  }
+}
+loadEvents()
+
 
 
 const formOpenBtn = document.querySelector("#form-open"),
@@ -35,6 +89,39 @@ loginBtn.addEventListener("click", (e) => {
     e.preventDefault();
     formContainer.classList.remove("active");
 });
+
+//Mostrar usuario en navbar y esconder "Iniciar Sesion"
+const userField = document.getElementById("userField")
+
+
+
+
+
+//-------------------------------------------------------------------------
+//Scripts Eventos
+
+//Funcion para enviar los datos del evento creado
+const eventsSubmit = document.getElementById("events-submit")
+
+eventsSubmit.addEventListener("click", () =>{
+  const form = document.getElementById("events-form")
+  
+  
+  form.submit()
+
+})
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
 
 //-------------------------------------------------------------------------
 //Scripts pagina de contacto:
