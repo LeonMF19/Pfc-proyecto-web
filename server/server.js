@@ -9,6 +9,7 @@ const cors = require("cors")
 
 const mongoose = require("mongoose")
 const DBconfig = require("./db/config")
+const MongoStore = require("connect-mongo")
 
 const session = require("express-session")
 const passport = require("passport")
@@ -29,11 +30,13 @@ const sessionOpts = {
     secret: "shhh",
     resave: false,
     saveUninitialized: false,
-    // store: MongoStore.create({
-    //     mongoUrl: DBconfig.URI,
-    //     dbName: "test"
-
-    // })
+    store: MongoStore.create({
+        mongoUrl: DBconfig.URI,
+        dbName: "test",
+    }),
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7 
+    }
 }
 
 
@@ -42,6 +45,7 @@ const sessionOpts = {
 //Middlewares globales
 app.use(cors({
     origin: "http://127.0.0.1:5500",
+    credentials: true
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))

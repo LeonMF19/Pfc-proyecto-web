@@ -25,9 +25,9 @@
                     <a href="contact.html" class="nav-link">Contacto</a>
                 </li>
             </ul>
-            <button class="button" id="form-open">Iniciar sesion</button>
-            <!--Aca va el usuario una vez hecho el login-->
+            <!--Aca va el usuario una vez hecho el login, de lo contrario se muestra el inicio de sesion-->
             <div id="userField">
+                <!-- <button class="button" id="form-open">Iniciar sesion</button> -->
                 <!--(Generado por scripts)-->
             </div>
         </nav>
@@ -71,12 +71,12 @@
             
         <!--Seccion para anotarse a los eventos-->
         <div class="signin-events-container">
-            <h2 class="events-title">Anotate</h2>
+            <h2 class="events-title">Próximos torneos</h2>
             <div id="events-container" class="events-to-sign">
                 <!--Aca van los eventos para anotarse-->
                 <div class="event" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <div class="event-host">
-                        <img src="" alt="Logo competencia">
+                        <img src="../img/logo pfc.png" alt="Logo competencia">
                         <p>Organizacion</p>
                     </div>
                     <p>Nombre evento</p>
@@ -103,7 +103,7 @@
                 </div>
             
                 <!--Funcionalidad solo para ADMINS (Crear eventos)-->
-                <div class="create-event">
+                <div id="create-event" class="create-event">
                     <h2 class="create-event-text">Crear evento</h3>
                     <i class="uil uil-plus-circle" data-bs-toggle="modal" data-bs-target="#createEventModal"></i>
                 </div>
@@ -195,14 +195,14 @@
             <i class="uil uil-times form-close"></i>
             <!-- Formulario inicio de sesion -->
             <div class="form login-form">
-                <form action="http://localhost:8080/api/users/login">
+                <form id="login-form" action="http://localhost:8080/api/users/login" method="POST">
                     <h2>Iniciar sesion</h2>
                     <div class="input-box">
-                        <input type="email" placeholder="Ingrese su email" required>
+                        <input type="email" name="email" placeholder="Ingrese su email" required>
                         <i class="uil uil-envelope-alt email"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Contraseña" required>
+                        <input type="password" name="password" placeholder="Contraseña" required>
                             <i class="uil uil-lock password"></i>
                             <i class="uil uil-eye-slash pw-hide"></i>
                     </div>  
@@ -213,42 +213,43 @@
                         </span>
                         <a href="#" class="forgot-pw">Olvidaste tu contraseña?</a>
                     </div>
-                    <button class="button">Iniciar sesion</button>             
+                    <input type="submit" class="button">            
                 
                     <div class="login-signup">
-                            ¿No tienes una cuenta?<a href="#" id="signup">Regisrarme</a>
+                            ¿No tienes una cuenta?<a href="#" id="signup">Registrarme</a>
                     </div>    
                 </form>
             </div>
-        </div>
-    
-
+        
             <!--Formulario de registro-->
             <div class="form signup-form">
-                <form action="http://localhost:8080/api/users/register">
+                <form action="http://localhost:8080/api/users/register" method="POST">
                     <h2>Registrarme</h2>
                     <div class="input-box">
-                        <input type="email" placeholder="Ingrese su email" required>
+                        <input type="email" name="email" placeholder="Ingrese su email" required>
                         <i class="uil uil-envelope-alt email"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="ingrese su contraseña" required>
+                        <input type="password" name="password" placeholder="ingrese su contraseña" required>
                            <i class="uil uil-lock password"></i>
                            <i class="uil uil-eye-slash pw-hide"></i>
                     </div>  
-                    <div class="input-box">
-                        <input type="password" placeholder="Confirme su contraseña" required>
+                    <!-- <div class="input-box">
+                        <input type="password" name="password" placeholder="Confirme su contraseña" required>
                            <i class="uil uil-lock password"></i>
                            <i class="uil uil-eye-slash pw-hide"></i>
-                    </div>  
-
-                    <button class="button" >Registrarme</button>             
+                    </div>   -->
+    
+                    <input type="submit" class="button">            
                
                     <div class="login-signup">
                          ¿Ya tienes una cuenta?<a href="#" id="login">Iniciar sesion</a>
                     </div>    
                 </form>
             </div>
+        </div>
+    
+
 
         
     </section>

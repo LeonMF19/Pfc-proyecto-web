@@ -32,6 +32,7 @@
             <img class="logo" src="../img/logo pfc.png" alt="Logo PFC">
         </div>
         <div class="profile-form-container">
+            <!--Formulario Perfil-->
             <form id="profile-form" action="http://localhost:8080/api/users/fighterProfile" method="post">
                 <!-- <div class="picture-edit-container">
                     <img src="#" alt="Foto de Perfil" id="profile-picture">
@@ -77,13 +78,13 @@
                     <label for="modality">Modalidad</label>
                     <div class="input-alt-flex">
                         <label for="boxing">
-                            <input type="checkbox" name="boxing"  required> Boxeo 
+                            <input type="checkbox" name="boxing"> Boxeo 
                         </label>
                         <label for="kickboxing">
-                            <input type="checkbox" name="kickboxing"  required> Kickboxing 
+                            <input type="checkbox" name="kickboxing"> Kickboxing 
                         </label>
                         <label for="K1">
-                            <input type="checkbox" name="K1"  required> K1 
+                            <input type="checkbox" name="K1"> K1 
                         </label>
                     </div>
                 </div>
@@ -93,8 +94,40 @@
                         <input type="checkbox" name="terms" required>
                     </label>
                 </div>
-                <button class="profile-form-submit">Guardar</button>
+                <input type="submit" class="profile-form-submit">
             </form>
+            <!--Seccion de perfil (una vez creado)-->
+            <div class="profile-section">
+                <div class="profile-data-container">
+                    <h3>Nombre</h3>
+                    <p>Joaquin Cortez</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Dojo</h3>
+                    <p>PFC</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Profesor</h3>
+                    <p>Federico Gentiluomo</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Genero</h3>
+                    <p>Hombre</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Edad</h3>
+                    <p>20</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Cantidad de Peleas</h3>
+                    <p>5</p>
+                </div>
+                <div class="profile-data-container">
+                    <h3>Categoria</h3>
+                    <p>55 kg</p>
+                </div>
+            </div>
+
         </div>
     </section>
 

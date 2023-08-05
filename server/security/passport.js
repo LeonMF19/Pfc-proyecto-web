@@ -1,7 +1,7 @@
 const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 
-const Usercontroller = require("../controller/userController")
+const {auth, findByEmail} = require("../controller/userController")
 
 
 
@@ -10,7 +10,7 @@ const Usercontroller = require("../controller/userController")
 passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, password, done) => {
     try {
         //Se verifican los datos en la base de datos
-        const result = await Usercontroller.auth(email, password)
+        const result = await auth(email, password)
         console.log("RESULT AUTH ", result)
         if(result.status === 200){
             //En caso de ser correcto se extrae el mail del usuario, con eso vamos a verificar las solicitudes posteriores
@@ -36,7 +36,8 @@ passport.serializeUser((email, done) =>{
 })
 
 
-passport.deserializeUser((email, done) =>{
+passport.deserializeUser( async (email, done) =>{
+    // const deserialized = await findByEmail(email)
     console.log("DESERIALIZADO ", email)
     done(null, email)
 

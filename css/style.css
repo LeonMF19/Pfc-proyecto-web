@@ -154,13 +154,29 @@ a{
 
     cursor: pointer;
     background-image: url("../img/pexels-cottonbro-studio-4753988.jpg");
+    transition: all 0.3s ease-in-out;
+
+}
+.event:hover{
+    transform: scale(1.08);
+    transition: all 0.3s ease-in-out;
+}
+.event p{
+    margin: 0;
 }
 .event-host{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+}
+.event-host img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
 }
 .event-host p{
-    padding-left: 1%;
+    padding-left: 4%;
+    margin: 0;
 }
 
 /*------------------------------------------------------------------*/
@@ -183,9 +199,14 @@ a{
 }
 .create-event i{
     font-size: 3.5rem;
-    color: #c70202d2;
+    
     padding-left: 1%;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.create-event i:hover{
+    color: #c70202d2;
+    transition: all 0.2s ease-in-out;
 }
 .create-event-form{
     width: 80%;
