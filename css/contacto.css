@@ -75,10 +75,15 @@ a{
 .input-box i{
     position: absolute;
     top: 50%;
+    left: 0%;
     transform: translateY(-50%);
     font-size: 20px;
     color: #707070;
 }
+.input-box input:focus + i {
+    color: #c70202d2;
+}
+
 
 
 /* -----------------------------------------------------------
@@ -86,7 +91,7 @@ Estilo Página de contacto */
 .contact{
     height: 95vh;
     width: 100%;
-    background-color: black;
+    background-color: #000;
     
 }
 .contact-container{

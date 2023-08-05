@@ -3,11 +3,13 @@
 
 //Funcion para crear eventos dinamicos y cargarlos
 async function loadEvents() {
+  //Se consiguen los datos de los eventos
   const response = await fetch("http://localhost:8080/api/events/get") 
   const data = await response.json()
  
   const eventsContainer = document.getElementById("events-container")
 
+  //En caso de no haber eventos se crea un div avisando que no hay eventos
   if(data.length === 0){
     const eventEmpty = document.createElement("div")
     eventEmpty.classList.add("event-empty")
@@ -15,6 +17,8 @@ async function loadEvents() {
     
     eventsContainer.appendChild(eventEmpty)
   }else{
+    //De lo contrario se crea un div con los datos correspondientes para cada uno de los eventos
+    const createDiv = document.getElementById("create-event")
     data.forEach((evento) => {
       const eventDiv = document.createElement("div")
       eventDiv.classList.add("event")
@@ -29,26 +33,30 @@ async function loadEvents() {
       logoImg.alt = "Logo competencia"
   
       const eventOrg = document.createElement("p")
-      eventOrg.textContent = evento.org
+      eventOrg.textContent = evento.eventOrg
   
       eventHostDiv.appendChild(logoImg)
       eventHostDiv.appendChild(eventOrg)
   
       const eventName = document.createElement("p")
-      eventName.textContent = evento.name
+      eventName.textContent = evento.eventName
   
+      //Se obtienen los datos de la fecha para formatearla DD/MM
+      const month = evento.eventDate.getMonth() + 1
+      const day = evento.eventDate.getDay()
+      const normalDate = `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}`
       const eventDate = document.createElement("p")
-      eventDate.textContent = `Fecha ${evento.date}`
+      eventDate.textContent = `Fecha ${normalDate}`
   
       const eventModality = document.createElement("p")
-      eventModality.textContent = evento.modality
+      eventModality.textContent = evento.eventModality
   
       eventDiv.appendChild(eventHostDiv)
       eventDiv.appendChild(eventName)
       eventDiv.appendChild(eventDate)
       eventDiv.appendChild(eventModality)
   
-      eventsContainer.appendChild(eventDiv) // Agregar el div del evento al contenedor
+      eventsContainer.insertBefore(eventDiv, createDiv) // Agregar el div del evento al contenedor
     });
   }
 }
@@ -56,17 +64,13 @@ loadEvents()
 
 
 
-const formOpenBtn = document.querySelector("#form-open"),
-home = document.querySelector(".home"),
+const home = document.querySelector(".home"),
 formContainer = document.querySelector(".form-container"),
 formCloseBtn = document.querySelector(".form-close"),
 signupBtn = document.querySelector("#signup"),
 loginBtn = document.querySelector("#login"),
 pwShowHide = document.querySelectorAll(".pw-hide");
 
-// evento del boton iniciar sesion 
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
  // Ocultar o mostrar contraseña
 pwShowHide.forEach(icon =>{
     icon.addEventListener("click", () =>{
@@ -90,10 +94,35 @@ loginBtn.addEventListener("click", (e) => {
     formContainer.classList.remove("active");
 });
 
+
 //Mostrar usuario en navbar y esconder "Iniciar Sesion"
-const userField = document.getElementById("userField")
+async function updateNavbar() {
+  try {
+    const response = await fetch("http://localhost:8080/api/users/get",{ credentials: "include"});
+    
+    const data = await response.json();
+    console.log("DAAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAAAAAAAA ", data)
 
+    const userField = document.getElementById("userField");
 
+    if (response.ok) {
+      // El usuario está autenticado, muestra la información del usuario
+      userField.innerHTML = `Bienvenido, ${data.name || data.email}`;
+    } else {
+      // El usuario no está autenticado, muestra el enlace de inicio de sesión
+      
+      // evento del boton iniciar sesion 
+      userField.innerHTML = `<button class="button" id="form-open">Iniciar sesion</button>`;
+      
+      
+      const formOpenBtn = document.querySelector("#form-open")
+      formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+      formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+    }
+  } catch (error) {
+    console.log("Error al realizar la solicitud", error);
+  }
+}
 
 
 
@@ -125,12 +154,12 @@ eventsSubmit.addEventListener("click", () =>{
 
 //-------------------------------------------------------------------------
 //Scripts pagina de contacto:
-const submitButton = document.querySelector("#form-submit")
+// const submitButton = document.querySelector("#form-submit")
 
-submitButton.addEventListener("click", () =>{
+// submitButton.addEventListener("click", () =>{
   
 
-})
+// })
 
 
 
@@ -138,35 +167,38 @@ submitButton.addEventListener("click", () =>{
 //Scripts pagina de perfil:
 
 document.addEventListener('DOMContentLoaded', async () => {
+
+  updateNavbar()
+  
   //Cambio de foto de perfil
-    const pictureInput = document.getElementById('picture-input');
-    const imageElement = document.getElementById('profile-picture');
+  //   const pictureInput = document.getElementById('picture-input');
+  //   const imageElement = document.getElementById('profile-picture');
 
-    pictureInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
+  //   pictureInput.addEventListener('change', (event) => {
+  //     const file = event.target.files[0];
 
-      if (file) {
+  //     if (file) {
         
-        if (file.type.startsWith('image/')) {
-          const reader = new FileReader();
-          reader.onload = function () {
-            // Actualizar el atributo src de la imagen para mostrar la imagen seleccionada
-            imageElement.src = reader.result;
-          };
-          reader.readAsDataURL(file);
-        } else {
-          alert('Por favor, selecciona un archivo de imagen válido.');
-        }
-      }
-    });
+  //       if (file.type.startsWith('image/')) {
+  //         const reader = new FileReader();
+  //         reader.onload = function () {
+  //           // Actualizar el atributo src de la imagen para mostrar la imagen seleccionada
+  //           imageElement.src = reader.result;
+  //         };
+  //         reader.readAsDataURL(file);
+  //       } else {
+  //         alert('Por favor, selecciona un archivo de imagen válido.');
+  //       }
+  //     }
+  //   });
 
-  //Configuración inputs(no permitir números negativos)
-    const numberInputs = document.getElementsByClassName("number-input")
+  // //Configuración inputs(no permitir números negativos)
+  //   const numberInputs = document.getElementsByClassName("number-input")
 
-    numberInputs.addEventListener("blur", () => {
-      if (numberInputs.value < 0) {
-        numberInputs.value = 0;
-      }
-    });
+  //   numberInputs.addEventListener("blur", () => {
+  //     if (numberInputs.value < 0) {
+  //       numberInputs.value = 0;
+  //     }
+  //   });
 });
   
