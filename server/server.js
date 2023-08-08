@@ -18,7 +18,7 @@ const passport = require("passport")
 
 async function connectDB(){
     try {
-        mongoose.connect(DBconfig.URI)
+        await mongoose.connect(DBconfig.URI)
         console.log("MongoDB connected successfully")
     } catch (error) {
         console.log("MONGO CONNECT ERROR ", error)
@@ -50,8 +50,8 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use(session(sessionOpts))
 app.use(passport.initialize())
+app.use(session(sessionOpts))
 app.use(passport.session())
 
 //Configuración de rutas

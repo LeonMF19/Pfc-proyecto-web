@@ -42,8 +42,10 @@ async function loadEvents() {
       eventName.textContent = evento.eventName
   
       //Se obtienen los datos de la fecha para formatearla DD/MM
-      const month = evento.eventDate.getMonth() + 1
-      const day = evento.eventDate.getDay()
+      const formatedDate = new Date(evento.eventDate)
+      
+      const month = formatedDate.getMonth() + 1
+      const day = formatedDate.getDay()
       const normalDate = `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}`
       const eventDate = document.createElement("p")
       eventDate.textContent = `Fecha ${normalDate}`
@@ -98,8 +100,8 @@ loginBtn.addEventListener("click", (e) => {
 //Mostrar usuario en navbar y esconder "Iniciar Sesion"
 async function updateNavbar() {
   try {
-    const response = await fetch("http://localhost:8080/api/users/get",{ credentials: "include"});
-    
+    const response = await fetch("http://localhost:8080/api/users/get",{ method: "GET", credentials: "include"});
+    console.log("Response fetch get user ", response)
     const data = await response.json();
     console.log("DAAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAAAAAAAA ", data)
 

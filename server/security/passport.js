@@ -14,8 +14,8 @@ passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, p
         console.log("RESULT AUTH ", result)
         if(result.status === 200){
             //En caso de ser correcto se extrae el mail del usuario, con eso vamos a verificar las solicitudes posteriores
-            const userToSerialize = {email: result.user[0].email}
-            return done(null, userToSerialize)
+            const user = result.user
+            return done(null, user)
         } else if(result.status !== 200 || !result.status){
             return donde(null, false, {message: "Usuario no encontrado"})
         }
@@ -29,17 +29,17 @@ passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, p
 
 
 
-passport.serializeUser((email, done) =>{
-    console.log("SERIALIZADO ", email)
-    done(null, email)
+passport.serializeUser((user, done) =>{
+    console.log("SERIALIZADO ", user[0])
+    done(null, user[0].email)
 
 })
 
 
 passport.deserializeUser( async (email, done) =>{
-    // const deserialized = await findByEmail(email)
-    console.log("DESERIALIZADO ", email)
-    done(null, email)
+    const deserialized = await findByEmail(email)
+    console.log("DESERIALIZADO ", deserialized[0])
+    done(null, deserialized[0])
 
 })
 

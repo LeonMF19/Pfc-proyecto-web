@@ -15,7 +15,7 @@ async function login(req, res){
             console.log("Usuario o contraseña incorrectos")
             return res.status(401).json({message: "Usuario o contraseña incorrectos"})
         }else{
-            return res.status(200).redirect("http://127.0.0.1:5500/pages/")
+            return res.status(200).redirect("http://127.0.0.1:5500/pages/index.html")
         }
         
 
@@ -79,6 +79,7 @@ async function findByEmail(userEmail){
 
 async function getUser(req, res){
     try {
+        console.log("REKUSERRRR ", req.user)
         if (req.isAuthenticated()) {
             const user = req.user;
             console.log("USER ACAAAAAAAAAAAAAAAAAAAAA ", user)
@@ -103,7 +104,7 @@ async function auth(email, password){
         console.log("USER ", user)
         const result = await Profile.find({ email: user.email, password: user.password })
         
-        console.log("RESULT ", result)
+        // console.log("RESULT ", result)
         if(result.length !== 0){
             console.log("Authentication successfull")
             
