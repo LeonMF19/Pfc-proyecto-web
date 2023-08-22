@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFC Inicio</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!--Iconos-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <link rel="stylesheet" href="../css/recuperacion.css">
+</head>
+<body>
+    <div class="pw-reset-container">
+        <!--Formulario para recibir mail-->
+        <form id="pw-reset-form" action="http://localhost:8080/api/mails/recovery" method="post">
+            <legend>Cambio de contraseña</legend>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Ingrese su email" required>
+                <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <input type="submit" class="pw-reset-button">
+        </form>
+
+        <!--Formulario para cambiar contraseña-->
+        <form id="new-pw-form" action="#">
+            <legend>Nueva Contraseña</legend>
+            <div class="input-box">
+                <input type="password" name="newPassword" placeholder="Ingrese su nueva contraseña" required>
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw-hide"></i>
+            </div>
+            <input type="submit" class="pw-reset-button">
+        </form>
+    </div>
+
+
+    <script src="../js/scriptsRecovery.js"></script>
+</body>
+</html>

@@ -11,8 +11,8 @@ const mongoose = require("mongoose")
 const DBconfig = require("./db/config")
 const MongoStore = require("connect-mongo")
 
+const {passport} = require("./security/passport")
 const session = require("express-session")
-const passport = require("passport")
 
 
 

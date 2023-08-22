@@ -17,7 +17,7 @@ passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, p
             const user = result.user
             return done(null, user)
         } else if(result.status !== 200 || !result.status){
-            return donde(null, false, {message: "Usuario no encontrado"})
+            return done(null, false, {message: "Usuario no encontrado"})
         }
         
     } catch (error) {
@@ -30,16 +30,16 @@ passport.use("auth", new LocalStrategy({usernameField: "email"}, async (email, p
 
 
 passport.serializeUser((user, done) =>{
-    console.log("SERIALIZADO ", user[0])
-    done(null, user[0].email)
+    console.log("SERIALIZADO ", user)
+    done(null, user._doc.email)
 
 })
 
 
 passport.deserializeUser( async (email, done) =>{
     const deserialized = await findByEmail(email)
-    console.log("DESERIALIZADO ", deserialized[0])
-    done(null, deserialized[0])
+    console.log("DESERIALIZADO ", deserialized)
+    done(null, deserialized)
 
 })
 

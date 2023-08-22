@@ -105,8 +105,6 @@ Estilo Página de perfil */
     border-radius: 12px;
 }
 #profile-form{
-    display: none;
-
     width: 80%;
     margin: 4% 8%;
 }
@@ -164,7 +162,7 @@ Estilo Página de perfil */
 }
 
 
-.profile-section{
+#profile-section{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

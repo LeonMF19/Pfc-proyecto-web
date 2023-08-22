@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.button{
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.button:active{
+    transform: scale(0.98);
+}
+.input-box{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+.input-box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+.input-box input:focus{
+    border-color: #c70202d2;
+
+}
+.input-box i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+.input-box i.email,
+.input-box i.password {
+    left: 0px;
+}
+.input-box input:focus + i {
+    color: #c70202d2;
+}
+.input-box i.pw-hide{
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+Formulario recuperacion */
+
+.pw-reset-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10%;
+    width: 100%;
+}
+.pw-reset-container form{
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    width: 30%;
+    padding: 2%;
+}
+.pw-reset-form legend{
+    text-decoration: underline 2px #c70202d2;
+}
+.pw-reset-button{
+    color: white;
+    background: #c70202d2;
+
+    margin: 8% 0 0 18%;
+    padding: 10px 0;
+    width: 60%;
+    
+    border: 0;
+    border-radius: 10px;
+}
+.text-response{
+    font-family: "Poppins",sans-serif;
+    text-align: center;
+    margin-top: 15%;
+}
+#new-pw-form{
+    display: none;
+}
+.pw-reset-container.active #new-pw-form{
+    display: block;
+}
+.pw-reset-container.active #pw-reset-form{
+    display: none;
+}

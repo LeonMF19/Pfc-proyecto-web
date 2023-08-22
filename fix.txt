@@ -1,0 +1,16 @@
+Cosas que faltan
+
+-Conseguir un background-img para el fondo de los eventos
+-Arreglar el tema de sesiones de usuario !!!!!!!!!!!!!!!!!!!!!!
+-Conseguir una imagen del logo PFC que sea png y con bastante resolucion o un svg
+-Arreglar envio de mails en el contacto
+-hacer hash para contraseñas (Hecho, verificar con sesiones)
+-Arreglar que seccion mostrar en la pagina "profile" (Hecho, verificar con sesiones)
+-Arreglar recuperacion de contraseña (Hecho, verificar con sesiones)  mmmmmmmmmmmmmm
+-Arreglar modales dinamicos (Hecho, verificar con sesiones)
+-Manejar logica para sesion de admin
+
+Antes de subir -->
+
+-cambiar las rutas de los fetchs a el dominio de la pagina
+-revisar seguridad de la pagina
