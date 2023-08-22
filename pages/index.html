@@ -116,8 +116,8 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Nombre Org/Dojo</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Nombre Org/Dojo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <h2>Devil fight night</h2>
@@ -195,7 +195,7 @@
             <i class="uil uil-times form-close"></i>
             <!-- Formulario inicio de sesion -->
             <div class="form login-form">
-                <form id="login-form" action="http://localhost:8080/api/users/login" method="POST">
+                <form id="login-form" action="http://localhost:8080/api/users/login" method="post">
                     <h2>Iniciar sesion</h2>
                     <div class="input-box">
                         <input type="email" name="email" placeholder="Ingrese su email" required>
@@ -211,7 +211,7 @@
                             <input type="checkbox" name="" id="check">
                             <label for="check">Recordarme</label>
                         </span>
-                        <a href="#" class="forgot-pw">Olvidaste tu contraseña?</a>
+                        <a href="recuperacion.html" class="forgot-pw">Olvidé mi contraseña</a>
                     </div>
                     <input type="submit" class="button">            
                 
@@ -245,6 +245,13 @@
                     <div class="login-signup">
                          ¿Ya tienes una cuenta?<a href="#" id="login">Iniciar sesion</a>
                     </div>    
+                </form>
+            </div>
+            
+            <!--Cambio de contraseña-->
+            <div class="form change-form">
+                <form action="#">
+
                 </form>
             </div>
         </div>

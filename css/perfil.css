@@ -105,8 +105,6 @@ Estilo Página de perfil */
     border-radius: 12px;
 }
 #profile-form{
-    display: none;
-
     width: 80%;
     margin: 4% 8%;
 }
@@ -164,16 +162,26 @@ Estilo Página de perfil */
 }
 
 
-.profile-section{
+#profile-section{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 
     margin-left: 5%;
+
+    /* background-image: LOGO PFC COMO EN LA PLANILLA; */
 }
 .profile-data-container{
+    width: 80%;
+    margin: 3% 0;
 
+}
+.profile-data-container h3{
+    text-decoration: underline 3px #c70202d2;
+}
+.profile-data-container p{
+    color: #333;
 }
 
 

@@ -3,6 +3,9 @@ const {Router} = express
 const router = Router()
 
 const nodemailer = require("nodemailer")
+const { pwChangeMail, resetPw, sendResetPage } = require("../controller/mailsController")
+
+
 
 
 router.post( "/enviar-mail", (req, res) => {
@@ -43,6 +46,15 @@ router.post( "/enviar-mail", (req, res) => {
 
 
 })
+
+
+
+router.post("/recovery", pwChangeMail)
+
+router.get("/reset/:token", sendResetPage)
+
+router.post("/reset/:token", resetPw)  
+
 
 
 module.exports = router
